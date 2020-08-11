@@ -1,0 +1,28 @@
+[options]
+girs_dir = "gir-files"
+library = "IBus"
+version = "1.0"
+target_path = "."
+work_mode = "normal"
+generate = ["IBus.Bus", "IBus.Factory", "IBus.Engine", "IBus.EngineDesc", "IBus.Component", "IBus.LookupTable", "IBus.PreeditFocusMode"]
+manual = ["Gio.DBusConnection"]
+
+[[object]]
+name = "IBus.*"
+status = "generate"
+    [[object.function]]
+    name = "free_strv"
+    ignore = true
+    [[object.function]]
+    name = "key_event_from_string"
+    ignore = true
+    [[object.constant]]
+    pattern = "*"
+    ignore = true
+
+[[object]]
+name = "IBus.Text"
+status = "generate"
+    [[object.function]]
+    name = "new_from_ucs4"
+    ignore = true
